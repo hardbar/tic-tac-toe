@@ -14,6 +14,7 @@ namespace Tic_Tac_Toe
         public string Square1 { get; set; } = " ";
         public string Square2 { get; set; } = " ";
         public string Square3 { get; set; } = " ";
+        public int Count { get; set; } = 0; // to keep track of the number of used spaces on the board --> to check for draws
 
         //constructor
         public Board() { }
@@ -50,6 +51,7 @@ namespace Tic_Tac_Toe
                     if (Square7 == " ")
                     {
                         Square7 = playerMarker;
+                        Count += 1;
                         Console.WriteLine(CurrentBoard());
                         break;
                     }
@@ -58,6 +60,7 @@ namespace Tic_Tac_Toe
                     if (Square8 == " ")
                     {
                         Square8 = playerMarker;
+                        Count += 1;
                         Console.WriteLine(CurrentBoard());
                         break;
                     }
@@ -66,6 +69,7 @@ namespace Tic_Tac_Toe
                     if (Square9 == " ")
                     {
                         Square9 = playerMarker;
+                        Count += 1;
                         Console.WriteLine(CurrentBoard());
                         break;
                     }
@@ -74,6 +78,7 @@ namespace Tic_Tac_Toe
                     if (Square4 == " ")
                     {
                         Square4 = playerMarker;
+                        Count += 1;
                         Console.WriteLine(CurrentBoard());
                         break;
                     }
@@ -82,6 +87,7 @@ namespace Tic_Tac_Toe
                     if (Square5 == " ")
                     {
                         Square5 = playerMarker;
+                        Count += 1;
                         Console.WriteLine(CurrentBoard());
                         break;
                     }
@@ -90,6 +96,7 @@ namespace Tic_Tac_Toe
                     if (Square6 == " ")
                     {
                         Square6 = playerMarker;
+                        Count += 1;
                         Console.WriteLine(CurrentBoard());
                         break;
                     }
@@ -98,6 +105,7 @@ namespace Tic_Tac_Toe
                     if (Square1 == " ")
                     {
                         Square1 = playerMarker;
+                        Count += 1;
                         Console.WriteLine(CurrentBoard());
                         break;
                     }
@@ -106,6 +114,7 @@ namespace Tic_Tac_Toe
                     if (Square2 == " ")
                     {
                         Square2 = playerMarker;
+                        Count += 1;
                         Console.WriteLine(CurrentBoard());
                         break;
                     }
@@ -114,6 +123,7 @@ namespace Tic_Tac_Toe
                     if (Square3 == " ")
                     {
                         Square3 = playerMarker;
+                        Count += 1;
                         Console.WriteLine(CurrentBoard());
                         break;
                     }
@@ -148,6 +158,18 @@ namespace Tic_Tac_Toe
             else if (Square9 == playerMarker && Square6 == playerMarker && Square3 == playerMarker)
                 return true;
             return false;
+        }
+
+        /// <summary>
+        /// Check if the game is a draw using the Count field
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckDraw()
+        {
+            if (Count == 9)
+                return true;
+            else
+                return false;
         }
     }
 }
